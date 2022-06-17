@@ -1,0 +1,40 @@
+{% load static%}
+{% static "images" as basicUrl %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href={%static 'css/style.css'%} />
+
+    <title>Index</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li class="small-box"><a href="/">Home</a></li>
+          {% if user.is_authenticated %}
+          <li class="small-box"><a href="logout">Logout</a></li>
+          {% else%}
+
+          <li class="small-box"><a href="register">Register</a></li>
+          <li class="small-box"><a href="login">Login</a></li>
+          {% endif %}
+
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <img src={%static 'images/1.jpg' %} alt="image not found" />
+      </div>
+    </main>
+    <footer>
+      <div class="foot">
+        <p>Copyright &copy;</p>
+      </div>
+    </footer>
+  </body>
+</html>
